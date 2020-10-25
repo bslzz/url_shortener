@@ -6,6 +6,9 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+//import mongodb
+require('./db/initMongoose');
+
 //middleware
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
