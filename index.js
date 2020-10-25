@@ -13,12 +13,8 @@ require('./db/initMongoose');
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-  res.render('home');
-});
-
 //routes
-app.use('/create', require('./routes/urlRoute'));
+app.use('/', require('./routes/urlRoute'));
 
 // starting server
 app.listen(PORT, () =>
