@@ -17,9 +17,8 @@ app.get('/', (req, res) => {
   res.render('home');
 });
 
-app.post('/create', (req, res) => {
-  console.log(req.body);
-});
+//routes
+app.use('/create', require('./routes/urlRoute'));
 
 // starting server
 app.listen(PORT, () =>
