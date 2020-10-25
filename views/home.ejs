@@ -15,7 +15,7 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-lg-12 text-center">
+        <div class="col-lg-12 text-center p-5">
           <h1>URL Shortener</h1>
         </div>
       </div>
@@ -45,20 +45,28 @@
     </div>
     </form>
       
-    <!-- links from the users -->
+    <!-- saved URLs from the DB -->
 
     <div class="row">
+<% for (let i=0; i< urlResult.length; i++){
+    %>
           <div class="col-lg-3">
             <div class="card border-success mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
+                <div class="card-header text-center">URLs</div>
                 <div class="card-body text-success">
-                  <h5 class="card-title">Success card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h5 class="card-title font-weight-bold"> Shortened URL: 
+                  
+                    <a href="http://localhost:5000/<%= urlResult[i].shortUrl %>" target="_blank">http://localhost:5000/<%= urlResult[i].shortUrl %></a>  
+              
+                    </h5>
+                  <p class="card-text"><span class="font-weight-bold">Main URL:</span>  <%= urlResult[i].longUrl %></p>
                 </div>
           </div>
       </div>
+      <%}
+          %>
     </div>
-
+ 
     <!-- Bootstrap Bundle with Popper.js -->
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"
