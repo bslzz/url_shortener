@@ -3,11 +3,16 @@ const UrlModel = require('../models/urlSchema');
 module.exports = {
   // get all URLs from the db
   getAllUrls: async (req, res) => {
-    let allURLs = await UrlModel.find((err, data) => {
-      res.render('home', {
-        urlResult: data,
+    try {
+      await UrlModel.find((err, data) => {
+        if (err) throw err;
+        res.render('home', {
+          urlResult: data,
+        });
       });
-    });
+    } catch (error) {
+      console.log(error.message);
+    }
   },
 
   //post new URL
@@ -24,6 +29,18 @@ module.exports = {
       });
     } catch (error) {
       res.status(500).json({ msg: `${error.message}` });
+    }
+  },
+
+  // link to the main url from shortURL
+  shortLink: async (req, res) => {
+    try {
+      await UrlModel.findOne({ shortUrl: req.params.urlId }, (err, data) => {
+        if (err) throw err.message;
+        res.redirect(data.longUrl);
+      });
+    } catch (error) {
+      console.log(error.message);
     }
   },
 };
