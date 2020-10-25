@@ -5,12 +5,17 @@ const UrlSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+
   shortUrl: {
     type: String,
     required: true,
+    unique: true,
+    maxlength: 6,
   },
+
   clickCount: {
     type: Number,
+    default: 0,
   },
 });
 
