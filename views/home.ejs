@@ -13,6 +13,52 @@
     <title>URL Shortener</title>
   </head>
   <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1>URL Shortener</h1>
+        </div>
+      </div>
+
+      <!-- input search form -->
+
+      <form action="/create" method="POST">
+      <div class="row">
+        <div class="input-group mb-3 mx-auto">
+          <input
+            type="url"
+            class="form-control"
+            placeholder="Paste your URL"
+            aria-label="URL"
+            name="longurl"
+            aria-describedby="button-addon2"
+          />
+          <button
+            class="btn btn-outline-success"
+            type="submit"
+            value="submit"
+            id="button-addon2"
+          >
+            Submit
+          </button>
+        </div>
+    </div>
+    </form>
+      
+    <!-- links from the users -->
+
+    <div class="row">
+          <div class="col-lg-3">
+            <div class="card border-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body text-success">
+                  <h5 class="card-title">Success card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+          </div>
+      </div>
+    </div>
+
     <!-- Bootstrap Bundle with Popper.js -->
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"
