@@ -27,14 +27,14 @@
         <div class="input-group mb-3 mx-auto">
           <input
             type="url"
-            class="form-control"
+            class="form-control shadow p-3 mb-5 bg-white rounded"
             placeholder="Paste your URL"
             aria-label="URL"
             name="longurl"
             aria-describedby="button-addon2"
           />
           <button
-            class="btn btn-outline-success"
+            class="btn btn-outline-success shadow p-3 mb-5 rounded"
             type="submit"
             value="submit"
             id="button-addon2"
@@ -51,7 +51,7 @@
 <% for (let i=0; i< urlResult.length; i++){
     %>
           <div class="col-lg-3">
-            <div class="card border-success mb-3" style="max-width: 18rem;">
+            <div class="card border-success mb-3 shadow p-3 mb-5 rounded mx-auto" style="max-width: 18rem;">
                 <div class="card-header text-center">URLs</div>
                 <div class="card-body text-success">
                   <h5 class="card-title"><span class="font-weight-bold font-monospace">Shortened URL: </span> 
