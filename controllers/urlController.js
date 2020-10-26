@@ -35,12 +35,24 @@ module.exports = {
   // link to the main url from shortURL
   shortLink: async (req, res) => {
     try {
-      await UrlModel.findOne({ shortUrl: req.params.urlId }, (err, data) => {
-        if (err) throw err.message;
-        res.redirect(data.longUrl);
+      const shortUrlRedirect = await UrlModel.findOne({
+        shortUrl: req.params.urlId,
+      });
+      res.redirect(shortUrlRedirect.longUrl);
+    } catch (error) {
+      res.status(500).json({ msg: `${error.message}` });
+    }
+  },
+
+  // delete urls
+  deleteLinks: async (req, res) => {
+    try {
+      await UrlModel.findByIdAndDelete({ _id: req.params.id }, (err, data) => {
+        if (err) throw err;
+        res.redirect('/');
       });
     } catch (error) {
-      console.log(error.message);
+      res.status(500).json({ msg: `${error.message}` });
     }
   },
 };
@@ -54,6 +66,5 @@ const generateShortUrl = () => {
   for (let i = 0; i < 6; i++) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
-  console.log(result);
   return result;
 };
