@@ -6,7 +6,7 @@
   "author": "bslzz <bishalkoid@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
@@ -17,8 +17,5 @@
   "engines": {
     "node": "12.16.2",
     "yarn": "1.22.5"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.6"
   }
 }
