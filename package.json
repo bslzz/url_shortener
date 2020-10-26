@@ -6,13 +6,17 @@
   "author": "bslzz <bishalkoid@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon index.js"
+    "start": "nodemon index.js"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "mongoose": "^5.10.10"
+  },
+  "engines": {
+    "node": "12.16.2",
+    "yarn": "1.22.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
